@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{92FB1F13-C9D7-403E-A837-D33228A188DD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QuanLyRapPhim</RootNamespace>
+    <AssemblyName>QuanLyRapPhim</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\CinemaDAO.cs" />
+    <Compile Include="DAO\CustomerDAO.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\FormatMovieDAO.cs" />
+    <Compile Include="DAO\GenreDAO.cs" />
+    <Compile Include="DAO\MovieByGenreDAO.cs" />
+    <Compile Include="DAO\MovieDAO.cs" />
+    <Compile Include="DAO\RevenueDAO.cs" />
+    <Compile Include="DAO\ScreenTypeDAO.cs" />
+    <Compile Include="DAO\ShowTimesDAO.cs" />
+    <Compile Include="DAO\StaffDAO.cs" />
+    <Compile Include="DAO\TicketDAO.cs" />
+    <Compile Include="DataRevenue.cs">
+      <DependentUpon>DataRevenue.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataRevenue.Designer.cs">
+      <DependentUpon>DataRevenue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataRevenue1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataRevenue.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Account.cs" />
+    <Compile Include="DTO\Cinema.cs" />
+    <Compile Include="DTO\Customer.cs" />
+    <Compile Include="DTO\FormatMovie.cs" />
+    <Compile Include="DTO\Genre.cs" />
+    <Compile Include="DTO\Movie.cs" />
+    <Compile Include="DTO\MovieByGenre.cs" />
+    <Compile Include="DTO\ScreenType.cs" />
+    <Compile Include="DTO\ShowTimes.cs" />
+    <Compile Include="DTO\Staff.cs" />
+    <Compile Include="DTO\Ticket.cs" />
+    <Compile Include="frmAccountSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAccountSettings.Designer.cs">
+      <DependentUpon>frmAccountSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminNewDesign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminNewDesign.Designer.cs">
+      <DependentUpon>frmAdminNewDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminUserControls\AccountUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmAdminUserControls\AccountUC.designer.cs">
+      <DependentUpon>AccountUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminUserControls\CustomerUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmAdminUserControls\CustomerUC.designer.cs">
+      <DependentUpon>CustomerUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminUserControls\DataUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmAdminUserControls\DataUC.designer.cs">
+      <DependentUpon>DataUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminUserControls\DataUserControl\CinemaUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmAdminUserControls\DataUserControl\CinemaUC.designer.cs">
+      <DependentUpon>CinemaUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminUserControls\DataUserControl\FormatMovieUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmAdminUserControls\DataUserControl\FormatMovieUC.designer.cs">
+      <DependentUpon>FormatMovieUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminUserControls\DataUserControl\GenreUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmAdminUserControls\DataUserControl\GenreUC.designer.cs">
+      <DependentUpon>GenreUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminUserControls\DataUserControl\MovieUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmAdminUserControls\DataUserControl\MovieUC.designer.cs">
+      <DependentUpon>MovieUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminUserControls\DataUserControl\ScreenTypeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmAdminUserControls\DataUserControl\ScreenTypeUC.designer.cs">
+      <DependentUpon>ScreenTypeUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminUserControls\DataUserControl\ShowTimesUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmAdminUserControls\DataUserControl\ShowTimesUC.designer.cs">
+      <DependentUpon>ShowTimesUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminUserControls\DataUserControl\TicketsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmAdminUserControls\DataUserControl\TicketsUC.designer.cs">
+      <DependentUpon>TicketsUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminUserControls\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminUserControls\Form1.designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminUserControls\RevenueUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmAdminUserControls\RevenueUC.designer.cs">
+      <DependentUpon>RevenueUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminUserControls\StaffUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmAdminUserControls\StaffUC.designer.cs">
+      <DependentUpon>StaffUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomer.Designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDashBoard.Designer.cs">
+      <DependentUpon>frmDashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSeller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeller.Designer.cs">
+      <DependentUpon>frmSeller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTheatre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTheatre.Designer.cs">
+      <DependentUpon>frmTheatre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAccountSettings.resx">
+      <DependentUpon>frmAccountSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminNewDesign.resx">
+      <DependentUpon>frmAdminNewDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUserControls\AccountUC.resx">
+      <DependentUpon>AccountUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUserControls\CustomerUC.resx">
+      <DependentUpon>CustomerUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUserControls\DataUC.resx">
+      <DependentUpon>DataUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUserControls\DataUserControl\CinemaUC.resx">
+      <DependentUpon>CinemaUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUserControls\DataUserControl\FormatMovieUC.resx">
+      <DependentUpon>FormatMovieUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUserControls\DataUserControl\GenreUC.resx">
+      <DependentUpon>GenreUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUserControls\DataUserControl\MovieUC.resx">
+      <DependentUpon>MovieUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUserControls\DataUserControl\ScreenTypeUC.resx">
+      <DependentUpon>ScreenTypeUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUserControls\DataUserControl\ShowTimesUC.resx">
+      <DependentUpon>ShowTimesUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUserControls\DataUserControl\TicketsUC.resx">
+      <DependentUpon>TicketsUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUserControls\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUserControls\RevenueUC.resx">
+      <DependentUpon>RevenueUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUserControls\StaffUC.resx">
+      <DependentUpon>StaffUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDashBoard.resx">
+      <DependentUpon>frmDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeller.resx">
+      <DependentUpon>frmSeller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTheatre.resx">
+      <DependentUpon>frmTheatre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DataRevenue.xsc">
+      <DependentUpon>DataRevenue.xsd</DependentUpon>
+    </None>
+    <None Include="DataRevenue.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataRevenue1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataRevenue.xss">
+      <DependentUpon>DataRevenue.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report.rdlc" />
+    <None Include="Resources\Logo beta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\794.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\project-manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tickets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Doanhthu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doanhthu1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DoanhThu %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DoanhThu %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dulieu %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dulieu %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Staff %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Staff %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Account %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Account %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Khách hàng %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Khách hàng %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tb.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-name-tag-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2_0002_Layer-7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2_0003_Layer-6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2_0004_Layer-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2_0005_Layer-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2_0006_Layer-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2_0007_Layer-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2_0008_Layer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2_0001_Layer-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New-Database-icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
+  </Target>
+</Project>

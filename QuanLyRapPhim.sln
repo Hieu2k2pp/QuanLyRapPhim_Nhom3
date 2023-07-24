@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "QuanLyRapPhim\GUI.csproj", "{92FB1F13-C9D7-403E-A837-D33228A188DD}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{E1743FE7-3914-49DD-9F59-89194D408E6C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92FB1F13-C9D7-403E-A837-D33228A188DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92FB1F13-C9D7-403E-A837-D33228A188DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92FB1F13-C9D7-403E-A837-D33228A188DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92FB1F13-C9D7-403E-A837-D33228A188DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1743FE7-3914-49DD-9F59-89194D408E6C}.Debug|Any CPU.ActiveCfg = Debug
+		{E1743FE7-3914-49DD-9F59-89194D408E6C}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {724A6180-6AAD-4B68-9C7B-0EB8646A86C8}
+	EndGlobalSection
+EndGlobal
